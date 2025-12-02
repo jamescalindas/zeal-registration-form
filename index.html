@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZEAL Registration Form</title>
+
+<style>
+/* -------------------- Body & Background -------------------- */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle at center, #f6e7c1, #d1a653 60%, #a66b1f 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 10px;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Subtle grid overlay */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#00000030 1px, transparent 1px);
+    background-size: 18px 18px;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* Glow effect */
+body::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,200,0.45), transparent 70%);
+    top: -50px;
+    right: -150px;
+    filter: blur(30px);
+    pointer-events: none;
+}
+
+/* -------------------- Form Container -------------------- */
+.form-wrapper {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(7px);
+    padding: 0; /* padding handled by sticky header */
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 215, 80, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------- Sticky Header -------------------- */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(7px);
+    padding: 20px 15px 10px 15px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Banner Image */
+.form-banner {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Instruction Text */
+.form-instructions {
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.85;
+}
+
+/* -------------------- Google Form iframe -------------------- */
+iframe {
+    width: 100%;
+    min-height: 1500px;
+    border: none;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+iframe:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 600px) {
+    iframe {
+        min-height: 1800px;
+    }
+    .form-banner {
+        max-height: 180px;
+    }
+    .form-instructions {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+    <div class="form-wrapper">
+
+        <!-- Sticky Banner + Instructions -->
+        <div class="sticky-header">
+            <img src="images/banner.png" alt="ZEAL Banner" class="form-banner">
+            <div class="form-instructions">
+                
+            </div>
+        </div>
+
+        <!-- Google Form -->
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfhU0F3YJ7QGlCoeEK5UKnebZ_UxaUUmJJhs7pDcprAHg_a3A/viewform?embedded=true">
+        </iframe>
+    </div>
+</body>
+</html>
